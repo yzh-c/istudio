@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rg</title>
+</head>
+<body>
+<form method="POST" action="{% url 'yzh:regi' %}">
+    {% csrf_token %}
+    <label>注册新用户</label>
+    <br>
+    <label>新用户名</label>
+    <input name="username2"></input>
+    <br>
+    <label>密码</label>
+    <input name="password2" type="password"></input>
+    <button type="submit">注册</button>
+    <br>
+    <br>
+    <div>性别:
+		<label><input type="radio" name="sex" value="男">男生</label>
+		<label><input type="radio" name="sex" value="女">女生</label>
+	</div>
+    <a href="/">返回主页</a>
+
+    {% if error2 %}
+    {{ error2 }}
+    {% endif %}
+    {% if error3 %}
+    {{ error3 }}
+    {% endif %}
+    {% if rp1 %}
+    {{ rp1 }}
+    {% endif %}
+    {% if rp2 %}
+    {{ rp2 }}
+    {% endif %}
+</form>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lg</title>
+</head>
+<body>
+<form method="POST" action="{% url 'yzh:logi' %}">
+    {% csrf_token %}
+    <label>用户名</label>
+    <input name="username1"></input>
+    <br>
+    <label>密码</label>
+    <input name="password1" type="password"></input>
+    <br>
+    <button type="submit">登陆</button>
+    <a href="/">返回主页</a>
+    <br>
+    <br>
+
+    {% if error %}
+    {{ error }}
+    {% endif %}
+    {% if error1 %}
+    {{ error1 }}
+    {% endif %}
+
+</form>
+
+</body>
+</html>
